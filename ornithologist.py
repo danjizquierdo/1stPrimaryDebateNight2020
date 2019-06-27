@@ -44,9 +44,15 @@ Doc.set_extension('polarity_scores', getter=polarity_scores)
 
 def encode_sentiment(tweet):
     if tweet['truncated']:
-        sentiment,embedding = graph_sentiment(tweet['extended_tweet'])
+    	if isinstance(tweet['extended_tweet'],str):
+        	sentiment,embedding = graph_sentiment(tweet['extended_tweet'])
+    	else:
+    		return
     else:
-        sentiment,embedding = graph_sentiment(tweet['text'])
+    	if isinstance(tweet['text'],str):
+        	sentiment,embedding = graph_sentiment(tweet['text'])
+    	else:
+    		return
     sentiment=float(sentiment)
     embedding = np.array2string(embedding,separator=',')
     t_id=tweet['id_str']
