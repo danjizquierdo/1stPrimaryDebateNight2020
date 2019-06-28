@@ -2,11 +2,17 @@
 
 ## Objective
 
-Listen to the conversation related to the candidate accounts and select hashtags using Tweepy, store the data in Neo4J and perform sentiment analysis to track reactions to the candidates over the night.
+Listen to the conversation around Democractic primary candidate accounts using Tweepy, store the data in Neo4J and perform sentiment analysis to track reactions to the candidates over the two nights.
 
-## Further steps
+## Results
 
-Potential considerations: 
-* Community detection to estimate dominance over the conversation - could this be a  proxy for vote share?
-* Calculate Pagerank to determine prominent members of the conversation apart from the candidates. Who are the most influential and whose camp are they in?
-* Topic modeling to determine the threads of discussion and stratify according to community
+https://medium.com/@dan.j.izquierdo/first-democratic-primary-debate-preliminary-sentiment-analysis-b4750fe2b88a
+
+## To-Do
+
+Graph algorithms for community detection as a proxy for voter share. Look into how to extend twitter demographic sample to more general population (research XBOX polling study). 
+
+
+## Considerations for Future Projects
+
+The rate of tweets streaming in was too much for my computer to manage and required frequent resetting. Look at optimizing code to better keep up with the stream, or at storing temporarily in another data structure before importing into graph database.  
